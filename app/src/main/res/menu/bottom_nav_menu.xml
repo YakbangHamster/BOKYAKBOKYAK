@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="홈"/>
+    <item
+        android:id="@+id/medicine"
+        android:icon="@drawable/clipboard"
+        android:title="약물수첩"/>
+    <item
+        android:id="@+id/reminder"
+        android:icon="@drawable/alarm"
+        android:title="복약알림"/>
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/profile"
+        android:title="마이페이지"/>
+</menu>
