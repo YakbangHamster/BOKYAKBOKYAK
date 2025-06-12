@@ -1,5 +1,6 @@
 package com.example.yakbanghamster.network
 
+import MedicineReportResponse
 import com.example.yakbanghamster.data.MedicineDetailResponse
 import com.example.yakbanghamster.data.MedicineListResponse
 import com.example.yakbanghamster.data.MedicineSearchResponse
