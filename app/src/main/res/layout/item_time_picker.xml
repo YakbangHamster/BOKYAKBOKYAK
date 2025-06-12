@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginBottom="18dp">
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="100dp"
+        android:background="@drawable/edittext_bg"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/btn_hour_up"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrow_up"
+                android:contentDescription="시간 올리기"/>
+
+            <EditText
+                android:id="@+id/edit_hour"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:text="00"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="#5C5C5C"
+                android:fontFamily="@font/pretendard"
+                android:inputType="number"
+                android:maxLength="2"
+                android:layout_marginTop="-3dp"
+                android:layout_marginBottom="0dp"/>
+
+            <ImageView
+                android:id="@+id/btn_hour_down"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrow_down"
+                android:contentDescription="시간 내리기"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=" : "
+            android:textSize="22sp"
+            android:gravity="center"
+            android:textColor="#5C5C5C"
+            android:fontFamily="@font/pretendard"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/btn_minute_up"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrow_up"
+                android:contentDescription="분 올리기"/>
+
+            <EditText
+                android:id="@+id/edit_minute"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:text="00"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="#5C5C5C"
+                android:fontFamily="@font/pretendard"
+                android:inputType="number"
+                android:maxLength="2"
+                android:layout_marginTop="-3dp"
+                android:layout_marginBottom="0dp"/>
+
+            <ImageView
+                android:id="@+id/btn_minute_down"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrow_down"
+                android:contentDescription="분 내리기"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_ampm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="AM"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#5C5C5C"
+            android:fontFamily="@font/pretendard"
+            android:layout_marginStart="18dp"/>
+    </LinearLayout>
+</LinearLayout>

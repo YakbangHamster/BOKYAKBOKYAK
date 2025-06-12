@@ -16,7 +16,7 @@
             android:src="@drawable/hamster"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="40dp"
-            android:layout_marginTop="153dp" />
+            android:layout_marginTop="183dp" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -30,7 +30,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/back"
                 android:contentDescription="뒤로가기"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginBottom="16dp" />
 
             <!-- 회원가입 -->
@@ -72,8 +72,10 @@
                     android:layout_marginBottom="4dp"
                     android:paddingEnd="90dp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/checkDuplicateButton"
+                    style="@style/CustomButton"
+                    android:fontFamily="@font/pretendard"
                     android:layout_width="75dp"
                     android:layout_height="35dp"
                     android:text="중복확인"
@@ -81,7 +83,9 @@
                     android:background="@drawable/rounded_blk_btn"
                     android:layout_gravity="end|center_vertical"
                     android:layout_marginBottom="2dp"
-                    android:layout_marginEnd="8dp" />
+                    android:layout_marginEnd="8dp"
+                    android:padding="0dp"
+                  />
             </FrameLayout>
 
             <!-- 아이디 중복 메시지 -->
@@ -123,6 +127,7 @@
 
             <!-- 비밀번호 확인 -->
             <EditText
+                android:id="@+id/editTextConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="비밀번호 확인"
@@ -131,25 +136,28 @@
                 android:textColor="#000000"
                 android:textColorHint="#999999"
                 android:background="@drawable/edittext_bg"
-                android:layout_marginBottom="24dp" />
+                android:layout_marginBottom="23dp" />
 
             <!-- 가입하기 버튼 -->
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/signUpButton"
+                style="@style/CustomButton"
+                android:fontFamily="@font/pretendard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:text="가입하기"
-                android:background="@drawable/rounded_blk_btn"
                 android:textColor="#FFFFFF"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp" />
+                android:padding="0dp"
+                android:layout_marginBottom="40dp"
+                 />
+
 
             <!-- 구분선 -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#F7F8F9"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="40dp" />
 
             <!-- 로그인 안내 텍스트 -->
             <LinearLayout

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+            <!-- gravity 속성 제거 -->
+
+            <!-- 상단 바 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="35dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_left"
+                    android:layout_marginRight="5dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="복용약 등록"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="start"
+                    android:textColor="#222222"
+                    android:fontFamily="@font/pretendard_semibold"/>
+            </LinearLayout>
+
+            <!-- 안내 텍스트: 약 이름 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="복용약의 이름을 입력해 주세요"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"/>
+
+            <!-- 약 이름 입력 -->
+            <LinearLayout
+                android:layout_width="330dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_bg"
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="26dp"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/edit_search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="약 이름 입력"
+                    android:fontFamily="@font/pretendard"
+                    android:textSize="16sp"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp"
+                    android:imeOptions="actionSearch"
+                    android:drawableTint="@null"/>
+
+                <Button
+                    style="@style/CustomButton"
+                    android:includeFontPadding="false"
+                    android:id="@+id/btn_search"
+                    android:layout_width="65dp"
+                    android:layout_height="35dp"
+                    android:text="검색"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:background="@drawable/rounded_blk_btn"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"/>
+            </LinearLayout>
+
+            <!-- 안내 텍스트: 요일 선택 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="복용 요일을 선택해 주세요"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:layout_marginStart="45dp"
+                android:layout_marginBottom="5dp"/>
+
+
+            <!-- 요일 선택 -->
+            <LinearLayout
+                android:layout_width="330dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_mon"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textOn="월"
+                    android:textOff="월"
+                    android:background="@drawable/edittext_bg"
+                    android:textColor="#8391A1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/pretendard_medium"
+                    style="@style/DiseaseButton"/>
+                <ToggleButton
+                    android:id="@+id/btn_tue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textOn="화"
+                    android:textOff="화"
+                    android:background="@drawable/edittext_bg"
+                    android:textColor="#8391A1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/pretendard_medium"
+                    style="@style/DiseaseButton"/>
+                <ToggleButton
+                    android:id="@+id/btn_wed"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textOn="수"
+                    android:textOff="수"
+                    android:background="@drawable/edittext_bg"
+                    android:textColor="#8391A1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/pretendard_medium"
+                    style="@style/DiseaseButton"/>
+                <ToggleButton
+                    android:id="@+id/btn_thu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textOn="목"
+                    android:textOff="목"
+                    android:background="@drawable/edittext_bg"
+                    android:textColor="#8391A1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/pretendard_medium"
+                    style="@style/DiseaseButton"/>
+                <ToggleButton
+                    android:id="@+id/btn_fri"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textOn="금"
+                    android:textOff="금"
+                    android:background="@drawable/edittext_bg"
+                    android:textColor="#8391A1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/pretendard_medium"
+                    style="@style/DiseaseButton"/>
+                <ToggleButton
+                    android:id="@+id/btn_sat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textOn="토"
+                    android:textOff="토"
+                    android:background="@drawable/edittext_bg"
+                    android:textColor="#8391A1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/pretendard_medium"
+                    style="@style/DiseaseButton"/>
+                <ToggleButton
+                    android:id="@+id/btn_sun"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textOn="일"
+                    android:textOff="일"
+                    android:background="@drawable/edittext_bg"
+                    android:textColor="#8391A1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/pretendard_medium"
+                    style="@style/DiseaseButton"/>
+            </LinearLayout>
+
+            <!-- 안내 텍스트: 기간 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="복용 기간을 입력해 주세요"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <!-- 기간 입력 (FrameLayout으로 캘린더 아이콘을 입력칸 안에 배치) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="18dp">
+
+                <FrameLayout
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp">
+
+                    <EditText
+                        android:id="@+id/edit_start_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edittext_bg"
+                        android:hint="2025.04.07"
+                        android:textSize="16.5sp"
+                        android:gravity="center"
+                        android:fontFamily="@font/pretendard"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="36dp"/>
+
+                    <ImageView
+                        android:id="@+id/btn_calendar_start"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:src="@drawable/calendar"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="11dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="~"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="#FFA450"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/pretendard_semibold"/>
+
+                <FrameLayout
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp">
+
+                    <EditText
+                        android:id="@+id/edit_end_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edittext_bg"
+                        android:hint="0000.00.00"
+                        android:textSize="16.5sp"
+                        android:gravity="center"
+                        android:fontFamily="@font/pretendard"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="36dp"/>
+
+                    <ImageView
+                        android:id="@+id/btn_calendar_end"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:src="@drawable/calendar"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="11dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                </FrameLayout>
+            </LinearLayout>
+
+
+            <!-- 안내 텍스트: 횟수 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="하루에 몇 번 복용하시나요?"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 횟수 입력 (플러스/마이너스 위치 바꿈, 아이콘 크기 줄임) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/btn_plus"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/plus_rectangle"
+                    android:background="@drawable/edittext_bg"
+                    android:contentDescription="증가"
+                    android:layout_marginEnd="25dp"/>
+
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_marginEnd="15dp">
+
+                    <TextView
+                        android:id="@+id/text_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="1"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:layout_centerInParent="true"
+                        android:textColor="#222222"
+                        android:fontFamily="@font/pretendard_semibold"/>
+
+                    <TextView
+                        android:id="@+id/text_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="번"
+                        android:textSize="16sp"
+                        android:gravity="center_vertical|end"
+                        android:textColor="#8391A1"
+                        android:fontFamily="@font/pretendard_semibold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"/>
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/btn_minus"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/minus_rectangle"
+                    android:background="@drawable/edittext_bg"
+                    android:contentDescription="감소"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <!-- 안내 텍스트: 시간 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="복용 시간을 입력해 주세요"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="15dp"/>
+
+            <LinearLayout
+                android:id="@+id/time_input_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <Button
+                android:id="@+id/btn_edit"
+                android:layout_width="330dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="100dp"
+                android:text="수정 완료"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_blk_btn"
+                android:fontFamily="@font/pretendard"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom" />
+
+</FrameLayout>

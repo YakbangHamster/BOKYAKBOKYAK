@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_bg"
+        android:padding="16dp">
+
+
+        <!-- 햄스터 이미지 -->
+        <ImageView
+            android:id="@+id/cardHamster"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/detail_hamster" />
+
+        <!-- 시간 텍스트 -->
+        <TextView
+            android:id="@+id/medicineTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/cardHamster"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/cardHamster"
+            android:text="오전 09:00"
+            android:textColor="#FF902B"
+            android:textSize="15sp" />
+
+        <!-- 약 이름 텍스트 -->
+        <TextView
+            android:id="@+id/medicineName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/medicineTime"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/cardHamster"
+            android:text="비타민C"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <!-- > 아이콘 -->
+        <ImageView
+            android:id="@+id/cardArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="-3dp"
+            android:src="@drawable/next" />
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

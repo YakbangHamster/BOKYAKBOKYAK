@@ -1,0 +1,13 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/white" />
+    <corners android:radius="24dp" />
+    <size android:height="80dp" />
+    <padding android:bottom="30dp"/>
+    <pathData
+        android:pathData="M0,0
+            L0,60
+            Q100,80 200,60
+            Q300,40 400,60
+            L400,0 Z"/>
+</shape>

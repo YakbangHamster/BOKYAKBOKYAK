@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_bg">
+
+    <!-- 상단 검색 영역 -->
+    <LinearLayout
+        android:id="@+id/searchHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/main_bg">
+
+        <!-- 상단바: 뒤로가기, 제목 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="35dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrow_left"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="약 검색"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="start"
+                android:textColor="#222222"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="어떤 약을 찾고 계신가요?"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#222222"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 🔍"
+                android:textSize="20sp"
+                android:layout_marginBottom="3dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/search_edit_bg"
+            android:padding="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/edit_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="약 이름 입력"
+                android:fontFamily="@font/pretendard"
+                android:textSize="16sp"
+                android:inputType="text"
+                android:singleLine="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:imeOptions="actionSearch"
+                android:drawableTint="@null"/>
+
+            <Button
+                style="@style/CustomButton"
+                android:includeFontPadding="false"
+                android:id="@+id/btn_search"
+                android:layout_width="65dp"
+                android:layout_height="35dp"
+                android:text="검색"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_blk_btn"
+                android:fontFamily="@font/pretendard_semibold"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/medicineRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="180dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom" />
+</LinearLayout>

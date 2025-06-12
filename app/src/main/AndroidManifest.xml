@@ -2,31 +2,66 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-    tools:targetApi="31">
+        android:theme="@style/Theme.YakbangHamster"
+        android:name=".App"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr_korean" />
+
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name" />
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".FindPasswordActivity" />
+        <activity android:name=".ui.activity.UserDetailActivity" />
+        <activity android:name=".PillSearchActivity" />
+        <activity android:name=".PillListActivity" />
+        <activity android:name=".PillInfoActivity"/>
+        <activity android:name=".PillRegisterActivity" />
+        <activity android:name=".PillOcrActivity"/>
+        <activity android:name=".PillOcrResultActivity"/>
+        <activity android:name=".PillDetailActivity"/>
+        <activity android:name=".PillEditDetailActivity"/>
+        <activity android:name=".PillSideEffectsActivity"/>
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".PillDiaryActivity"/>
+        <activity android:name=".ReportActivity" android:exported="true"
+            android:label="@string/app_name">
+
+        </activity>
 
 
-    <activity
-        android:name=".MainActivity"
-        android:exported="true"
-        android:label="@string/app_name"
-        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-
-    <activity android:name=".SignUpActivity" />
-    <activity android:name=".FindPasswordActivity" />
-</application>
-
-    </manifest>
+    </application>
+</manifest>

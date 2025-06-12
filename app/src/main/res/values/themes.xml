@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- themes.xml -->
 <resources>
-    <style name="Theme.YakbangHamster" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:fontFamily">@font/pretendard</item>
-        <item name="fontFamily">@font/pretendard</item>
-    </style>
+
 </resources>

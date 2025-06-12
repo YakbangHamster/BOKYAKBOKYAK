@@ -1,0 +1,78 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/edittext_bg"
+    android:padding="12dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="14dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="💊"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:id="@+id/txt_medicine_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="타이레놀"
+                android:fontFamily="@font/pretendard_semibold"
+                android:textSize="16sp"
+                android:textColor="#222222"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_times"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="28dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txt_time"
+                android:layout_width="74dp"
+                android:layout_height="20dp"
+                android:text="7:00 AM"
+                android:textSize="3sp"
+                android:textStyle="bold"
+                android:textColor="@color/time_button_text"
+                android:background="@drawable/time_button_bg"
+                android:fontFamily="@font/pretendard_semibold"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="6dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_checkbox"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/checkbox_selector"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:focusable="true"/>
+</FrameLayout>
