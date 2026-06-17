@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Camera Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Detection Overlay -->
+    <com.example.yakbanghamster.OverlayView
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Switch Camera Button -->
+    <ImageButton
+        android:id="@+id/switchCameraBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="top|end"
+        android:background="@android:color/transparent"
+        android:src="@drawable/profile_btn"
+        android:contentDescription="카메라 전환" />
+
+    <!-- modal dim background -->
+    <View
+        android:id="@+id/guide_dim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#80000000"/>
+
+    <!-- modal -->
+    <LinearLayout
+        android:id="@+id/guide_modal"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:padding="18dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_margin="12dp"
+        android:background="@drawable/modal_background"
+        android:elevation="4dp"
+        android:layout_gravity="center"
+        android:clipToPadding="false"
+        android:clipChildren="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/guide_close"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/close"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription="닫기" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/guide_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="복용을 시작하겠습니다."
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/guide_pill_img"
+            android:layout_width="330dp"
+            android:layout_height="330dp"
+            android:src="@drawable/hadpill"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="pill image"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/guide_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="복약할 약과 물컵을 준비해주세요."
+            android:textColor="#555555"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="-20dp"
+            android:layout_marginBottom="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/guide_start_btn"
+            style="@style/CustomButton"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:text="시작하기"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

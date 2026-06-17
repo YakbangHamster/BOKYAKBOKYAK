@@ -1,0 +1,322 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8F9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="100dp">
+
+        <!-- 상단 컨테이너 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/topContainer"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFF6EF"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <ImageView
+                    android:id="@+id/notificationIcon"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="45dp"
+                    android:src="@drawable/notification" />
+
+                <TextView
+                    android:id="@+id/welcomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="30dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="김햄찌 님, 반가워요\n오늘의 컨디션은\n어떤가요?"
+                    android:textColor="#000000"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+
+                <!-- 텍스트 + 화살표 + 밑줄 -->
+                <LinearLayout
+                    android:id="@+id/textUnderlineContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/conditionRecord"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="컨디션 기록하러 가기"
+                            android:textSize="20sp"
+                            android:textColor="#6E6E6E"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/arrowIcon"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginBottom="-2dp"
+                            android:src="@drawable/arrow_right" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="4.5dp"
+                        android:layout_marginTop="-1dp"
+                        android:background="#FFB572" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/hamsterImage"
+                    android:layout_width="120dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="-70dp"
+                    android:src="@drawable/bg_hamster" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 선택 버튼창 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/buttonCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:id="@+id/buttonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="4"
+                android:padding="8dp">
+
+                <!-- 버튼 1: 부작용 확인 -->
+                <LinearLayout
+                    android:id="@+id/btn_pill_side_effects"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/button_gradient"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="4dp"
+                        android:clipToOutline="true">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/side_effects" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="부작용 확인"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- 버튼 2: 약 검색 -->
+                <LinearLayout
+                    android:id="@+id/btn_pill_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/button_gradient"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="4dp"
+                        android:clipToOutline="true">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/pill_search" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="약 검색"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- 버튼 3: 복용약 등록 -->
+                <LinearLayout
+                    android:id="@+id/btn_pill_register"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/button_gradient"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="4dp"
+                        android:clipToOutline="true">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/regist_pill" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="복용약 등록"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- 버튼 4: 복약 레포트 -->
+                <LinearLayout
+                    android:id="@+id/btn_pill_report"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/button_gradient"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="4dp"
+                        android:clipToOutline="true">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/report" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="복약 레포트"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:gravity="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 곧 복약할 시간이에요 텍스트 -->
+        <TextView
+            android:id="@+id/soonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="곧 복약할 시간이에요 💊"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_medicine_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <!-- 빈 상태/로딩 상태 표시 뷰 -->
+        <LinearLayout
+            android:id="@+id/empty_medicine_view"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/main_bg"
+            android:layout_marginTop="20dp"
+            android:gravity="top|center_horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/empty_hamster_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/shocked_hamster" />
+
+            <TextView
+                android:id="@+id/empty_medicine_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘의 복용약이 없어요!\n아직 등록하지 않았나요?"
+                android:textColor="#6F6F6F"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom" />
+</FrameLayout>

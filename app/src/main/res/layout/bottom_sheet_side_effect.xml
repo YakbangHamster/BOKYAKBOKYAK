@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EBECED">
+
+    <TextView
+        android:id="@+id/sideEffectTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="부작용 안내"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#222222"
+        android:paddingBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/sideEffectContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로딩 중..."
+        android:textSize="15sp"
+        android:textColor="#222222"/>
+</LinearLayout>

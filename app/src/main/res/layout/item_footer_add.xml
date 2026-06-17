@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btn_add"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:layout_marginStart="34dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="32dp"
+    android:background="@drawable/edittext_bg"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <TextView
+        android:fontFamily="@font/pretendard_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="복용약 추가하기"
+        android:textSize="17sp"
+        android:textColor="#1E232C"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="19dp"
+        android:src="@drawable/plus"
+        android:layout_marginStart="8dp"/>
+</LinearLayout>

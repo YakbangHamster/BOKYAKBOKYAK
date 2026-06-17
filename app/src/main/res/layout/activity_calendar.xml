@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- 상단 날짜/캘린더 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="5dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="6dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+
+                <ImageView
+                    android:id="@+id/pill_calendar"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/pill_calendar"
+                    android:contentDescription="캘린더"/>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2025년 6월"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:textColor="#222222"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/btn_prev_month"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/before"
+                    android:contentDescription="이전"/>
+
+                <ImageView
+                    android:id="@+id/btn_next_month"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/next"
+                    android:contentDescription="다음"
+                    android:layout_marginStart="18dp"/>
+            </LinearLayout>
+
+            <!-- 달력 -->
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mcv_showOtherDates="all"
+                app:mcv_calendarMode="week"
+                app:mcv_firstDayOfWeek="sunday"
+                app:mcv_selectionColor="#FFA655"
+                app:mcv_headerTextAppearance="@style/CalendarHeader"
+                app:mcv_weekDayTextAppearance="@style/CalendarWeekDay"
+                app:mcv_dateTextAppearance="@style/CalendarDate"
+                app:mcv_tileHeight="45dp"
+                app:mcv_tileWidth="55dp"
+                android:layout_marginBottom="10dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="630dp"
+                android:orientation="vertical" android:background="@drawable/rounded_top_bg"
+                android:paddingTop="24dp"
+                android:paddingBottom="100dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginTop="18dp"
+                android:elevation="2dp"
+                android:clipToOutline="true">
+
+
+                <!-- 컨디션 선택 -->
+                <LinearLayout
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_gravity="center"
+                    android:padding="16dp"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_condition_guide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="오늘의 컨디션을 선택해 보세요 :D"
+                        android:layout_marginLeft="3dp"
+                        android:textSize="18sp"
+                        android:textColor="#222222"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="12dp">
+
+                        <LinearLayout
+                            android:id="@+id/img_refreshed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:scaleType="centerInside"
+                                android:id="@+id/iv_refreshed"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/refreshed"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="개운해요"
+                                android:textSize="14sp"
+                                android:textColor="#222222"
+                                android:layout_marginTop="4dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/img_lively"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:scaleType="centerInside"
+                                android:id="@+id/iv_lively"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/lively"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="쌩쌩해요"
+                                android:textSize="14sp"
+                                android:textColor="#222222"
+                                android:layout_marginTop="4dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/img_sleepy"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:scaleType="centerInside"
+                                android:id="@+id/iv_sleepy"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:src="@drawable/sleepy"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="졸려요"
+                                android:textSize="14sp"
+                                android:textColor="#222222"
+                                android:layout_marginTop="3dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/img_tired"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:id="@+id/iv_tired"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:src="@drawable/tired"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="힘들어요"
+                                android:textSize="14sp"
+                                android:textColor="#222222"
+                                android:layout_marginTop="3dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_today_medicines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오늘의 복용약이에요 📝"
+                    android:textSize="18sp"
+                    android:textColor="#222222"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 약 리스트 샘플 카드 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_medicine"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+                <!-- 복용 시작 버튼 -->
+                <Button
+                    android:id="@+id/btn_take_pill"
+                    android:layout_width="330dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:text="복용 시작"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    style="@style/CustomButton"
+                    android:background="@drawable/rounded_blk_btn"
+                    android:fontFamily="@font/pretendard"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom" />
+
+</FrameLayout>

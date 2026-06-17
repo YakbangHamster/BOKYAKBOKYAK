@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg">
+
+    <!-- 상단바: 항상 보임 -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="35dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/arrow_left"
+            android:layout_marginRight="5dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="복용약 등록"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:textColor="#222222"/>
+    </LinearLayout>
+
+    <!-- 실제 내용 전체 (상단바 아래에서만 보임, 처음엔 GONE) -->
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="32dp"
+        android:layout_marginTop="95dp"
+    android:visibility="gone">
+
+    <!-- 상단 안내문구 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="스캔된 약은 다음과 같아요 ✅"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#222222"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="3dp"/>
+
+    <TextView
+        android:fontFamily="@font/pretendard_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="복용약의 상세 정보를 등록해 주세요."
+        android:textSize="19sp"
+        android:textColor="#888888"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 약명 리스트 (RecyclerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/medicineRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+    android:id="@+id/loadingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#80FFFFFF"
+    android:layout_marginTop="95dp"
+    android:visibility="visible">
+
+<ProgressBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="?android:attr/progressBarStyleLarge"
+    android:indeterminate="true"
+    android:indeterminateTint="#FFA655"
+    android:layout_marginTop="-100dp"
+    android:layout_marginBottom="10dp"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="잠시만 기다려주세요!\n약 리스트를 출력 중이에요"
+    android:textSize="17sp"
+    android:gravity="center" />
+</LinearLayout>
+
+
+<androidx.compose.ui.platform.ComposeView
+android:id="@+id/compose_nav_bar"
+android:layout_width="match_parent"
+android:layout_height="120dp"
+android:layout_gravity="bottom" />
+
+
+    </FrameLayout>

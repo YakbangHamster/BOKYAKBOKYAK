@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F7F8F9"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/cardHamster"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/detail_hamster" />
+
+        <!-- 텍스트가 23글자 이상이면 뒤에 ...이 붙도록 (줄바꿈 방지) -->
+        <TextView
+            android:id="@+id/medicineName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/cardHamster"
+            android:layout_alignTop="@id/cardHamster"
+            android:layout_marginStart="12dp"
+            android:layout_toRightOf="@id/cardHamster"
+            android:layout_alignParentEnd="true"
+            android:text="원투스테리드연질캡슐"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            />
+
+        <TextView
+            android:id="@+id/medicineDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/medicineName"
+            android:layout_alignStart="@id/medicineName"
+            android:layout_marginTop="4dp"
+            android:text="1회 1정"
+            android:textColor="#8391A1"
+            android:textSize="14sp"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
